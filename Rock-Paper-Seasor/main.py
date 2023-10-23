@@ -1,20 +1,6 @@
 import random , sys 
 print("Welcome to the rock paper seasor game")
 
-
-    
-usr = input ('Type : rock (r) , paper(p) , seasor(s) :\t')
-com = random.randint(1,3)
-
-if com == 1 :
-    computer = 'r'
-
-if com == 2 :
-    computer= 'p'
-
-if com== 3 :
-    computer='s'
-
 def GameWon(usr,computer):
     if (usr =='r' ):
         if computer=='p':
@@ -57,11 +43,29 @@ def GameWon(usr,computer):
         print("Invalid option. Please select valid option!")
         sys.exit()
         
-with open("score.tex", 'a', encoding ='utf-8', ) as Fil:
-    Fil.write(f"You type : {usr}")
-    Fil.write("Computer type : {computer}")
-    Fil.write(f"Result : {GameWon(usr,computer)}")
-    
-print("You type :\t" + usr)
-print("Computer type:\t" + computer)
-print(GameWon(usr,computer))
+
+while True:
+    usr = input ('Type : rock (r) , paper(p) , seasor(s) :\t')
+    com = random.randint(1,3)
+ 
+    if com == 1 :
+         computer = 'r'
+
+    if com == 2 :
+        computer= 'p'
+
+    if com== 3 :
+        computer='s'
+
+
+
+    with open("score.tex", 'a', encoding ='utf-8', ) as Fil:
+        Fil.write(f"You type : {usr}")
+        Fil.write("Computer type : {computer}")
+        Fil.write(f"Result : {GameWon(usr,computer)}")
+
+
+    print("You type :\t" + usr)
+    print("Computer type:\t" + computer)
+    print(GameWon(usr,computer))
+
