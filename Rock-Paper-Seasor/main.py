@@ -1,4 +1,4 @@
-import random
+import random , sys 
 print("Welcome to the rock paper seasor game")
 
 
@@ -48,6 +48,15 @@ def GameWon(usr,computer):
         else:
 #              print("Tide!")
              return "Tide"
+
+    elif (usr=='q'):
+        print("Thanks for using it!")
+        sys.exit()
+
+    else:
+        print("Invalid option. Please select valid option!")
+        sys.exit()
+        
 with open("score.tex", 'a', encoding ='utf-8', ) as Fil:
     Fil.write(f"You type : {usr}")
     Fil.write("Computer type : {computer}")
